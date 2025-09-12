@@ -1,0 +1,118 @@
+.users-container {
+    .title {
+        text-align: center;
+
+        .title-manage-user {
+            color: red;
+            font-size: 25px;
+        }
+    }
+
+    .add-user {
+        button {
+            background: linear-gradient(90deg, rgb(0, 190, 159), #53f09a);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .users-table {
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+
+            th,
+            td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+            .btn-edit {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                color: #0ace37;
+                font-size: 1.2rem;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: transparent !important;
+                    color: #0a8d26 !important;
+                    transform: scale(1.25);
+                }
+            }
+
+            .btn-delete {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                color: #e71b1b;
+                font-size: 1.2rem;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: transparent !important;
+                    color: #b71515 !important;
+                    transform: scale(1.25);
+                }
+            }
+        }
+    }
+}
+
+.modal-user-container {
+    .modal-header {
+        button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 35px;
+        }
+    }
+
+    .modal-user-body {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            width: 49%;
+
+            &.max-width-input {
+                width: 99.3%;
+            }
+
+            &.on-row {
+                width: 32.2%;
+                display: flex;
+            }
+
+            .select-option {
+                border-radius: 5px;
+                border: 1px solid grey;
+                height: 30px;
+                outline: none;
+                padding: 0 10px;
+            }
+
+            input {
+                border-radius: 5px;
+                border: 1px solid grey;
+                height: 30px;
+                outline: none;
+                padding: 0 10px;
+            }
+        }
+    }
+}

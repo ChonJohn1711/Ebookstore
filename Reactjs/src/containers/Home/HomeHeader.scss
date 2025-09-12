@@ -1,0 +1,367 @@
+.HomeHeader-container {
+    background: #ffd600;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+
+    .site-header {
+        max-width: 1200px; // hoặc 1024px, 1180px tuỳ theo thiết kế
+        margin: 0 auto; // căn giữa theo chiều ngang
+        width: 100%; // chiếm hết chiều ngang khung chứa
+        box-sizing: border-box;
+
+        .top-banner {
+            display: block; // để margin auto có tác dụng
+            background: #FFEE5F;
+            width: 100%;
+
+            img {
+                width: 1185px; // độ rộng bạn muốn, có thể thay bằng % hoặc vw
+                height: 44px; // giữ tỉ lệ gốc
+                display: block; // để margin auto căn giữa nếu cần
+                margin: 0 auto;
+            }
+        }
+
+        .header-main {
+            .header-container {
+                display: flex;
+                align-items: center;
+                padding: 12px 0;
+                padding-top: 30px;
+                background: #ffd600;
+
+                .logo {
+                    margin-right: 8px; // chỉ cách nhẹ logo và ô tìm kiếm
+
+                    img {
+                        height: 42px;
+                        width: 230px;
+                    }
+                }
+
+                .search-actions {
+                    display: flex;
+                    flex: 1;
+                    align-items: center;
+
+                    .search {
+                        position: relative;
+
+                        .btn-search {
+                            position: absolute;
+                            top: 50%;
+                            left: 12px; // đẩy icon vào sát lề trái của input
+                            transform: translateY(-50%);
+                            background: none;
+                            border: none;
+                            font-size: 16px;
+                            padding: 0;
+                            color: black;
+                            z-index: 1;
+                        }
+
+                        input {
+                            width: 416px;
+                            padding: 11px 12px 11px 35px; // đẩy chữ khởi động sang phải để chứa icon
+                            border-radius: 20px;
+                            border: none;
+                            outline: none;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .optionBar {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        font-size: 16px;
+                        gap: 20px;
+                        margin-left: 20px;
+
+                        .signIn,
+                        .cart,
+                        .map {
+                            border-radius: 6px;
+                            padding: 3px 7px;
+                            display: flex;
+                            align-items: center;
+                            // padding: 0 14px;
+                            font-size: 14px;
+                            text-decoration: none;
+                            color: black;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #fff27f;
+                                transform: scale(1.1);
+                            }
+
+                            .personal {
+                                text-decoration: none;
+                                color: inherit;
+
+                                &:hover {
+                                    color: inherit;
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+
+                        .languages {
+                            display: flex;
+                            color: black;
+                            font-size: 16px;
+
+                            position: absolute; // hoặc fixed nếu bạn muốn nó luôn hiện ở đó khi cuộn
+                            right: 0;
+                            padding-right: 20px;
+
+                            .language-vi,
+                            .language-en {
+                                cursor: pointer;
+                                font-weight: bold;
+                                border-radius: 6px;
+                                transition: background-color 0.3s ease, color 0.3s ease;
+                                padding: 6px 12px;
+                                transition: all 0.3s ease;
+                                color: rgba(0, 0, 0, 0.3); // chữ mờ nhưng không ảnh hưởng nền
+
+                                &:hover {
+                                    background-color: #fff27f;
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                            .language-vi.active {
+                                color: red;
+                                opacity: 1;
+                            }
+
+                            .language-en.active {
+                                color: rgb(0, 26, 255);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-nav {
+            padding: 1px 0;
+
+            .nav-list {
+                display: flex;
+                margin-top: 24px;
+                margin-bottom: 8px;
+                gap: 15px;
+                flex-wrap: nowrap;
+                font-size: 14px;
+                justify-content: center;
+
+                .deviceList,
+                .deviceListDown {
+                    border-radius: 6px;
+                    padding: 0 5px;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    color: black;
+                    position: relative;
+                    text-decoration: none;
+                    white-space: nowrap;
+
+                    img {
+                        width: 19px;
+                        height: 19px;
+                        display: block;
+                    }
+                }
+
+                .deviceList {
+                    .caret-icon-down {
+                        display: inline;
+                    }
+
+                    .caret-icon-up {
+                        display: none;
+                    }
+                }
+
+                .deviceListDown {
+                    .caret-icon-down {
+                        display: inline;
+                    }
+
+                    .caret-icon-up {
+                        display: none;
+                    }
+
+                    .phukienList {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: white;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                        z-index: 100;
+                        border-radius: 4px;
+                        padding: 8px 0;
+                        min-width: 180px;
+                        list-style: none;
+
+                        li {
+                            padding: 6px 12px;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #f0f0f0;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .phukienList {
+                            display: block;
+                        }
+
+                        .caret-icon-down {
+                            display: none;
+                        }
+
+                        .caret-icon-up {
+                            display: inline;
+                        }
+                    }
+                }
+
+                a {
+                    color: black;
+                    text-decoration: none;
+
+                    &:hover {
+                        background-color: #fff27f;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-address-container {
+    .modal-header.title {
+        background-color: white !important;
+        border-bottom: 1px solid #ddd;
+        padding: 12px 16px;
+
+        .modal-title-text {
+            font-weight: 600; // áp dụng trực tiếp text
+            color: black;
+        }
+
+        // Nút X
+        .close {
+            border: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            font-size: 2rem;
+            color: #000;
+            opacity: 0.7;
+            padding: 0;
+            margin: 0;
+
+            &:hover {
+                opacity: 1;
+                background: transparent !important;
+            }
+        }
+    }
+
+    .modal-body {
+        font-size: 14px;
+
+        .current-address {
+            margin-bottom: 15px;
+
+            .label {
+                color: gray;
+            }
+
+            .value {
+                font-weight: bold;
+                margin-left: 5px;
+            }
+        }
+
+        .change-address {
+            margin-bottom: 15px;
+
+            .label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+
+            .search-box {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                input {
+                    width: 100%;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                    padding: 5px 35px 5px 10px; // chừa khoảng bên phải cho icon
+                    outline: none;
+                    font-size: 14px;
+                }
+
+                i {
+                    position: absolute;
+                    right: 10px;
+                    color: gray;
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 10px 0;
+            color: gray;
+            font-size: 12px;
+
+            span {
+                padding: 0 10px;
+                background: white;
+            }
+
+            &:before,
+            &:after {
+                content: "";
+                flex: 1;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+
+        .select-address {
+            cursor: pointer;
+
+            .select-text {
+                color: #007bff;
+                font-weight: 500;
+            }
+
+            .sub-text {
+                display: block;
+                color: gray;
+                font-size: 12px;
+            }
+        }
+    }
+}

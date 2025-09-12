@@ -1,0 +1,127 @@
+{
+    "header": {
+        "welcome": "Welcome "
+    },
+    "home-header": {
+        "search": "What are you looking for",
+        "signin": "Sign In",
+        "male": "Mr.",
+        "female": "Ms.",
+        "cart": "Cart",
+        "HCM": "Ho Chi Minh City",
+        "phone": "Phone",
+        "accessory": "Accessories",
+        "case": "Phone Case",
+        "backup_charger": "Power Bank",
+        "earphone": "Earphones",
+        "mouse": "Mouse",
+        "keyboard": "Keyboard",
+        "memory_card": "Memory Card",
+        "charging_cable": "Charging Cable",
+        "bluetooth_speaker": "Bluetooth Speaker",
+        "watch": "Watch",
+        "old_trade-in": "Used Devices, Trade-in",
+        "old_good": "Good Price Used Devices",
+        "trade-in_for_new": "Trade-in for New",
+        "trade-in": "Buy Used Devices",
+        "monitor_printer": "Monitor, Printer",
+        "desktop": "Desktop Computer",
+        "computer_screen": "Computer Monitor",
+        "monitor_mount": "Monitor Stand",
+        "game_console": "Game Console",
+        "software": "Software",
+        "printer_ink": "Printer Ink",
+        "printer": "Printer",
+        "sim_scratch-card": "SIM, Top-up Card",
+        "travel-eSIM": "Travel eSIM",
+        "services": "Utility Services",
+        "bill": "Bill Payment",
+        "warranty": "Warranty - Insurance",
+        "facility": "Telecom Utilities"
+    },
+    "home-page": {
+        "promotion": "Online Promotions",
+        "pc_printer": "PC, Printer",
+        "suggests": "Suggests for you:",
+        "only_left": "Only left:",
+        "come_soon": "Coming soon"
+    },
+    "Signin": {
+        "order_info": "Order information lookup",
+        "phone_input": "Enter purchase phone number",
+        "password_input": "Enter password",
+        "continue": "CONTINUE"
+    },
+    "personal": {
+        "male": "Mr.",
+        "female": "Ms.",
+        "bought_product": "Order History",
+        "info_address": "Profile & Address Book",
+        "signout": "Sign Out",
+        "total_accumulated_points": "Total Reward Points: ",
+        "read_more": "Read More",
+        "all": "All",
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "shipping": "Processing",
+        "delivering": "Out for Delivery",
+        "cancelled": "Cancelled",
+        "succeeded": "Completed",
+        "order": "Order: ",
+        "received": "Received",
+        "total_amount": "Total: ",
+        "view_more": "View Details"
+    },
+    "Cart": {
+        "empty_cart": "Empty cart",
+        "empty_product_in_cart": "There are no products in the cart",
+        "back_to_homepage": "Back to homepage",
+        "text1": "For assistance, please call ",
+        "text2": "or "
+    },
+    "menu": {
+        "system": {
+            "header": "System",
+            "system-administrator": {
+                "header": "System Administrator",
+                "user-manage": "User manage",
+                "user-redux": "User redux manage",
+                "register-package-group-or-account": "Register service package for group/account"
+            },
+            "system-parameter": {
+                "header": "System-parameter"
+            }
+        },
+        "admin": {
+            "manage-user": {
+                "user": "Users",
+                "manage-user": "Manage Users",
+                "manage-admin": "Manage Admins",
+                "manage-staff": "Manage Staffs",
+                "manage-customer": "Manage Customers",
+                "crud": "CRUD User",
+                "crud-redux": "CRUD Redux",
+                "add-user": " Add New User",
+                "firstName": "First Name",
+                "lastName": "Last Name",
+                "phonenumber": "Phone Number",
+                "address": "Address",
+                "gender": "Gender",
+                "roleId": "Role ID",
+                "actions": "Actions"
+            },
+            "manage-product": {
+                "product": "Products",
+                "manage-product": "Manage Products"
+            },
+            "manage-promotion": {
+                "promotion": "Promotions",
+                "manage-promotion": "Manage Promotions"
+            },
+            "manage-order": {
+                "order": "Orders",
+                "manage-order": "Manage Orders"
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@import "../../styles/common.scss";
+
+.header-container {
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgba(212, 0, 255, 1), #33ffb1ff);
+    color: white;
+    height: 48px;
+    position: relative;
+    padding: 0 12px;
+    // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+    .language {
+        display: flex;
+        gap: 8px;
+        position: absolute;
+        right: 60px; // chừa chỗ cho nút signout
+        font-size: 17px;
+        font-weight: 600;
+        margin-right: 30px;
+
+        .language-vi,
+        .language-en {
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 6px 12px;
+            color: rgba(0, 0, 0, 0.3); // chữ mờ nhưng không ảnh hưởng nền
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #99ffee;
+                transform: scale(1.1);
+            }
+        }
+
+        .language-vi.active {
+            color: rgb(223, 45, 0);
+            opacity: 1;
+        }
+
+        .language-en.active {
+            color: rgb(0, 26, 255);
+            opacity: 1;
+        }
+
+    }
+
+    .welcome-admin {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 25px;
+        font-weight: bold;
+        color: #00ffea;
+        white-space: nowrap; // tránh xuống dòng
+    }
+
+    .btn-signout {
+        display: flex;
+        align-items: center;
+        line-height: 0;
+        height: 36px;
+        width: 36px;
+        border-radius: 20%;
+        margin-left: 40px;
+        padding: 0 10px;
+        background-color: #ffbe8a;
+        color: #e60000;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#ffbe8a, 5%);
+            transform: scale(1.1);
+        }
+
+        i {
+            font-size: $base-size + 2px;
+        }
+    }
+}

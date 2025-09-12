@@ -1,0 +1,128 @@
+{
+    "header": {
+        "welcome": "Xin chào "
+    },
+    "home-header": {
+        "search": "Bạn tìm gì",
+        "signin": "Đăng nhập",
+        "male": "A.",
+        "female": "C.",
+        "cart": "Giỏ hàng",
+        "HCM": "Hồ Chí Minh",
+        "phone": "Điện thoại",
+        "accessory": "Phụ kiện",
+        "case": "Ốp lưng",
+        "backup_charger": "Sạc dự phòng",
+        "earphone": "Tai nghe",
+        "mouse": "Chuột",
+        "keyboard": "Bàn phím",
+        "memory_card": "Thẻ nhớ",
+        "charging_cable": "Cáp sạc",
+        "bluetooth_speaker": "Loa Bluetooth",
+        "watch": "Đồng hồ",
+        "old_trade-in": "Máy cũ, thu cũ",
+        "old_good": "Máy cũ giá tốt",
+        "trade-in_for_new": "Thu cũ đổi mới",
+        "trade-in": "Thu mua máy cũ",
+        "monitor_printer": "Màn hình, máy in",
+        "desktop": "Máy tính để bàn",
+        "computer_screen": "Màn hình máy tính",
+        "monitor_mount": "Giá treo màn hình",
+        "game_console": "Máy chơi game",
+        "software": "Phần mềm",
+        "printer_ink": "Mực in",
+        "printer": "Máy in",
+        "sim_scratch-card": "Sim, thẻ cào",
+        "travel-eSIM": "eSim du lịch",
+        "services": "Dịch vụ tiện ích",
+        "bill": "Thanh toán hóa đơn",
+        "warranty": "Bảo hành - bảo hiểm",
+        "facility": "Tiện ích viễn thông"
+    },
+    "home-page": {
+        "promotion": "Khuyến mãi Online",
+        "pc_printer": "PC, Máy in",
+        "suggests": "Gợi ý cho bạn:",
+        "only_left": "Chỉ còn:",
+        "come_soon": "Sắp diễn ra"
+    },
+    "Signin": {
+        "order_info": "Tra cứu thông tin đơn hàng",
+        "phone_input": "Nhập số điện thoại mua hàng",
+        "password_input": "Nhập mật khẩu",
+        "continue": "TIẾP TỤC"
+    },
+    "personal": {
+        "male": "Anh",
+        "female": "Chị",
+        "bought_product": "Đơn hàng đã mua",
+        "info_address": "Thông tin và sổ địa chỉ",
+        "signout": "Đăng Xuất",
+        "total_accumulated_points": "Tổng điểm tích lũy: ",
+        "read_more": "Tìm hiểu thêm",
+        "all": "Tất cả",
+        "pending": "Chờ xử lý",
+        "confirmed": "Đã xác nhận",
+        "shipping": "Đang chuyển hàng",
+        "delivering": "Đang giao hàng",
+        "cancelled": "Đã hủy",
+        "succeeded": "Thành công",
+        "order": "Đơn hàng: ",
+        "received": "Đã nhận hàng",
+        "total_amount": "Tổng tiền: ",
+        "view_more": "Xem chi tiết"
+    },
+    "Cart": {
+        "empty_cart": "Giỏ hàng trống",
+        "empty_product_in_cart": "Không có sản phẩm nào trong giỏ hàng",
+        "back_to_homepage": "Về trang chủ",
+        "text1": "Khi cần trợ giúp vui lòng gọi ",
+        "text2": "hoặc "
+    },
+    "menu": {
+        "system": {
+            "header": "Hệ thống",
+            "system-administrator": {
+                "header": "Quản trị hệ thống",
+                "user-manage": "Quản lý người sử dụng",
+                "user-redux": "Quản lý user redux",
+                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
+            },
+            "system-parameter": {
+                "header": "Tham số hệ thống"
+            }
+        },
+        "admin": {
+            "manage-user": {
+                "user": "Người dùng",
+                "manage-user": "Quản lý người dùng",
+                "manage-admin": "Quản lý admin",
+                "manage-staff": "Quản lý nhân viên",
+                "manage-customer": "Quản lý khách hàng",
+                "crud": "CRUD User",
+                "crud-redux": "CRUD Redux",
+                "add-user": " Thêm người dùng mới",
+                "firstName": "Họ",
+                "lastName": "Tên",
+                "phonenumber": "Số điện thoại",
+                "address": "Địa chỉ",
+                "gender": "Giới tính",
+                "roleId": "Mã vai trò",
+                "actions": "Hành động"
+            },
+            "manage-product": {
+                "product": "Sản phẩm",
+                "manage-product": "Quản lý sản phẩm"
+            },
+            "manage-promotion": {
+                "promotion": "Khuyến mãi",
+                "manage-promotion": "Quản lý khuyến mãi"
+            },
+            "manage-order": {
+                "order": "Đặt hàng",
+                "manage-order": "Quản lý đặt hàng"
+            }
+        },
+        "staff": {}
+    }
+}
