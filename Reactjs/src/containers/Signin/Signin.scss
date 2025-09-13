@@ -1,151 +1,244 @@
 .Signin-container {
-    z-index: -1000;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
 
-    .order-lookup-wrapper {
+    /* HEADER */
+    .signin-header {
+        width: 100%;
+        height: 72px;
+        background: white;
+        border-bottom: 1px solid rgba(102, 102, 102, 0.25);
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        gap: 60px; // khoảng cách giữa ảnh và form
-        padding: 90px 0;
-        background-color: #f5f6f8;
+        padding: 0 60px;
 
-        .order-banner img {
-            width: 540px;
-            height: auto;
-            border-radius: 8px;
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+
+            /* BackIcon là ReactComponent SVG */
+            .back-icon {
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                vertical-align: middle;
+
+                /* Nếu muốn đổi màu fill cho SVG inline, dùng:
+           .back-icon path { fill: #666; }
+           Nhưng chú ý: phụ thuộc vào nội dung SVG */
+            }
+
+            .back-text {
+                font-size: 16px;
+                color: #666;
+            }
         }
 
-        .order-lookup-box {
-            background: white;
-            padding: 100px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 506px;
-            text-align: center;
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
 
-            h2 {
-                font-size: 22px;
-                margin-bottom: 25px;
-            }
+        .header-title {
+            font-size: 20px;
+            color: #ea580c;
+            cursor: pointer;
+            padding: 7px 15px;
+            border: 2px solid #ea580c;
+            border-radius: 15px;
+            background-color: transparent;
+            transition: all 0.3s ease; // mượt hơn khi hover
 
-            .userInput {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-                max-width: 400px;
-                margin: 0 auto;
-                margin-bottom: 10px;
-
-                .inputGroup {
-                    position: relative;
-
-                    input {
-                        width: 100%;
-                        padding: 12px 30px;
-                        border: 1px solid #ccc;
-                        border-radius: 25px;
-                        font-size: 14px;
-                        outline: none;
-
-                        &:focus {
-                            border-color: #ff8800;
-                        }
-                    }
-
-                    .icon {
-                        position: absolute;
-                        top: 50%;
-                        right: 19px;
-                        transform: translateY(-50%);
-                    }
-                }
-
-                .passwordGroup {
-                    .toggle-password {
-                        left: auto;
-                        right: 15px;
-                        cursor: pointer;
-                    }
-                }
-            }
-
-            .btn-continue {
-                background-color: #ff6a00;
+            &:hover {
+                background-color: #ea580c;
                 color: white;
-                padding: 12px;
-                width: 100%;
-                border: none;
-                border-radius: 25px;
-                font-size: 20px;
-                cursor: pointer;
-                transition: background 0.2s;
+            }
 
-                &:hover {
-                    background-color: #e65c00;
-                }
+            &:active {
+                transform: scale(0.96); // nhấn vào sẽ hơi thu nhỏ lại
             }
         }
     }
 
-    .tgdd-footer {
-        background: white;
-        padding: 15px 160px;
-        font-size: 14px;
-        color: #333;
+    /* CONTENT */
+    .signin-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
 
-        .footer-columns {
+        .content-logo {
+            width: 500px;
+            height: 128px;
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
+            /* Dùng flex để căn giữa */
+            justify-content: center;
+            /* Ngang */
+            align-items: center;
+            /* Dọc */
+            overflow: hidden;
+            /* Nếu ảnh lớn hơn div, sẽ cắt bớt */
 
-            .column {
-                flex: 1;
+            img {
+                width: 100%;
+                /* Ảnh co giãn vừa với div */
+                height: 100%;
+                /* Giữ tỉ lệ hoặc thay bằng 'auto' nếu muốn giữ aspect ratio */
+                object-fit: cover;
+                /* Phủ đầy div và cắt phần thừa nếu cần */
+            }
+        }
 
-                h4 {
-                    font-size: 16px;
-                    font-weight: bold;
-                    margin-bottom: 10px;
+        .content-title {
+            font-size: 40px;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        /* form-section: chứa 2 box và divider ở cùng cấp */
+        .form-section {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            align-items: center;
+            justify-content: center;
+            /* để divider có thể kéo cao bằng chiều cao của box */
+
+            /* left & right boxes (shared styles) */
+            .form-box-signin-direct,
+            .form-box-signin-indirect {
+                background: white;
+                padding: 40px;
+                border-radius: 12px;
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+
+                .form-heading {
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                    text-align: center;
                 }
 
-                p,
-                a {
-                    margin: 10px 0;
-                    color: #333;
-                    text-decoration: none;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-
-                .site-links {
+                .form-group {
                     display: flex;
-                    flex-wrap: wrap;
-                    gap: 8px;
+                    flex-direction: column;
+                    margin-bottom: 16px;
 
-                    span {
-                        background: #ddd;
-                        padding: 4px 10px;
-                        border-radius: 4px;
-                        font-size: 13px;
+                    label {
+                        font-size: 16px;
+                        color: #666;
+                        margin-bottom: 6px;
+                    }
+
+                    input {
+                        height: 40px;
+                        border: 1px solid rgba(102, 102, 102, 0.35);
+                        border-radius: 8px;
+                        padding: 0 12px;
+                        font-size: 14px;
                     }
                 }
 
-                .social {
+                .btn-submit {
+                    width: 100%;
+                    height: 48px;
+                    background: #111111;
+                    color: white;
+                    border: none;
+                    border-radius: 24px;
                     margin-top: 10px;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
 
-                    span {
-                        display: inline-block;
-                        margin-right: 12px;
+                .btn-outline {
+                    width: 100%;
+                    height: 48px;
+                    margin-top: 16px;
+                    border-radius: 24px;
+                    border: 1px solid #333;
+                    background: white;
+                    font-size: 16px;
+                    cursor: pointer;
+                    display: flex;
+                    /* để icon + text align */
+                    align-items: center;
+                    gap: 12px;
+                    padding: 0 16px;
+                    justify-content: center;
+                }
+
+                /* icon inside buttons: đã sửa thiếu px */
+                .google-icon,
+                .facebook-icon,
+                .mail-icon {
+                    width: 28px;
+                    height: 28px;
+                    display: inline-block;
+                }
+
+                .extra-links {
+                    margin-top: 24px;
+
+                    a {
+                        color: #111;
+                        text-decoration: underline;
+                        font-weight: 500;
                     }
+                }
+            }
+
+            /* end boxes */
+
+            /* --- divider ở đây, cùng cấp với 2 box --- */
+            .divider {
+                /* tạo 1 đường kẻ mảnh dọc giữa 2 box, chiếm full chiều cao của .form-section */
+                width: 1px;
+                background: rgba(102, 102, 102, 0.35);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                /* stretch để bằng chiều cao của container (do align-items: stretch trên .form-section) */
+                align-self: stretch;
+
+                span {
+                    /* chữ OR đọc ngang: xoay -90 độ để nằm ngang trên đường dọc */
+                    background: white;
+                    /* che phần đường kẻ đằng sau chữ */
+                    padding: 4px 8px;
+                    font-size: 16px;
+                    font-family: 'Avenir', sans-serif;
+                    font-weight: 400;
+                    color: #333333;
+                    white-space: nowrap;
                 }
             }
         }
 
-        .footer-bottom {
-            font-size: 12px;
-            color: #666;
+        /* end form-section */
+
+        .extra-links {
+            margin-top: 24px;
+            font-size: 20px;
+            font-family: 'Poppins';
+            word-wrap: 'break-word';
+
+            a {
+                color: #111;
+                text-decoration: underline;
+                font-weight: 500;
+            }
         }
     }
 }

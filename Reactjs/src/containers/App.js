@@ -8,6 +8,7 @@ import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authenticati
 import { path } from '../utils'
 import Home from '../routes/Home';
 import Signin from './Signin/Signin';
+import Signup from './Signup/Signup';
 import Personal from './Personal/Personal';
 import Cart from './Cart/Cart';
 import HomePage from './Home/HomePage';
@@ -48,6 +49,7 @@ class App extends Component {
                                     <Route path={path.HOME} exact component={userIsAuthenticated(Home)} />
                                     <Route path={path.HOMEPAGE} component={HomePage} />
                                     <Route path={path.SIGNIN} component={userIsNotAuthenticated(Signin)} />
+                                    <Route path={path.SIGNUP} component={userIsNotAuthenticated(Signup)} />
                                     <Route path={path.PERSONAL} component={userIsAuthenticated(Personal)} />
                                     <Route path={path.CART} component={Cart} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />

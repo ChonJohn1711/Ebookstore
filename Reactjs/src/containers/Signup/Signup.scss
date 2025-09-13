@@ -1,0 +1,273 @@
+.signup-container {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .signup-header {
+        width: 100%;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        padding: 0 60px;
+        background: white;
+        border-bottom: 1px solid rgba(102, 102, 102, 0.25);
+
+        .back-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            cursor: pointer;
+
+            .back-icon {
+                cursor: pointer;
+            }
+
+            .back-text {
+                color: #666666;
+                font-family: Poppins, sans-serif;
+            }
+        }
+
+        .signin-header {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: auto; // đẩy sang bên phải
+
+            span {
+                font-size: 20px;
+                font-family: Poppins, sans-serif;
+                font-weight: 400;
+            }
+
+            .signin-link {
+                color: #EA580C;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .signup-content {
+        width: 578px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+        margin-top: 50px;
+
+        .signup-logo {
+            width: 500px;
+            height: 128px;
+            display: flex;
+            /* Dùng flex để căn giữa */
+            justify-content: center;
+            /* Ngang */
+            align-items: center;
+            /* Dọc */
+            overflow: hidden;
+            /* Nếu ảnh lớn hơn div, sẽ cắt bớt */
+
+            img {
+                width: 100%;
+                /* Ảnh co giãn vừa với div */
+                height: 100%;
+                /* Giữ tỉ lệ hoặc thay bằng 'auto' nếu muốn giữ aspect ratio */
+                object-fit: cover;
+                /* Phủ đầy div và cắt phần thừa nếu cần */
+            }
+        }
+
+        .signup-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 500;
+            color: #333333;
+            font-family: Inter, sans-serif;
+        }
+
+        .signup-socials {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+
+            .social-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* căn giữa text + icon ngang */
+                gap: 12px;
+                height: 64px;
+                border-radius: 32px;
+                border: 1px solid #333333;
+                padding: 0 20px;
+                cursor: pointer;
+                font-weight: 500;
+                font-size: 25px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                }
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        .signup-email {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
+
+            .email-title {
+                text-align: center;
+                font-size: 18px;
+                font-weight: 500;
+                color: #333333;
+                font-family: Poppins, sans-serif;
+            }
+
+            .email-fields {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    label {
+                        font-size: 16px;
+                        color: #666666;
+                        font-family: Poppins, sans-serif;
+                    }
+
+                    input {
+                        height: 56px;
+                        border-radius: 12px;
+                        border: 1px solid rgba(102, 102, 102, 0.35);
+                        padding-left: 16px;
+                        font-size: 16px;
+                    }
+
+                    .hint {
+                        font-size: 14px;
+                        color: #666666;
+                    }
+                }
+            }
+
+            .gender-section,
+            .birthday-section {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                label {
+                    font-size: 16px;
+                    color: #111111;
+                }
+            }
+
+            .gender-options {
+                display: flex;
+                gap: 32px;
+
+                .gender-option {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    input {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+
+            .birthday-fields {
+                display: flex;
+                gap: 20px;
+
+                input {
+                    width: 100%;
+                    height: 56px;
+                    border-radius: 12px;
+                    border: 1px solid rgba(102, 102, 102, 0.35);
+                    padding-left: 12px;
+                }
+            }
+
+            .terms {
+                font-size: 16px;
+                color: #333333;
+            }
+
+            .signup-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+
+                .signup-btn {
+                    width: 100%;
+                    height: 64px;
+                    background: #111111;
+                    opacity: 0.25;
+                    border-radius: 40px;
+                    color: white;
+                    font-size: 22px;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+
+                .signin-link {
+                    font-size: 20px;
+                    color: black;
+
+                    span {
+                        color: #EA580C;
+                        cursor: pointer;
+                        margin-left: 4px;
+                    }
+                }
+            }
+        }
+
+        .signup-or {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+            width: 100%;
+            margin-bottom: 100px;
+
+            .line {
+                flex: 1;
+                height: 2px;
+                background: rgba(102, 102, 102, 0.25);
+            }
+
+            span {
+                font-size: 24px;
+                color: #666666;
+            }
+        }
+    }
+
+    .support-wrapper {
+        align-self: stretch;
+        /* không bị căn giữa ngang */
+        margin-top: auto;
+        /* đẩy Support xuống dưới cùng */
+    }
+}

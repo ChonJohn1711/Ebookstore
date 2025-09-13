@@ -1,69 +1,78 @@
-.Support-container {
-    background: white;
+.Support-footer {
+    background: black;
+    /* phủ full width */
+    color: white;
+    padding: 40px 0;
+    /* padding trên dưới, ngang để container con xử lý */
 
-    .tgdd-footer {
-        padding: 15px 0;
-        max-width: 1200px; // hoặc 1024px, 1180px tuỳ theo thiết kế
-        margin: 0 auto; // căn giữa theo chiều ngang
-        width: 100%; // chiếm hết chiều ngang khung chứa
-        box-sizing: border-box;
-        font-size: 14px;
-        color: #333;
+    .footer-container {
+        max-width: 1200px;
+        /* giới hạn khung */
+        margin: 0 auto;
+        /* căn giữa */
+        padding: 0 60px;
+        /* padding hai bên */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
 
-        .footer-columns {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
+        .footer-col {
+            h3 {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
 
-            .column {
-                flex: 1;
+            p {
+                font-size: 13px;
+                margin: 4px 0;
+            }
 
-                h4 {
-                    font-size: 16px;
-                    font-weight: bold;
-                    margin-bottom: 10px;
-                }
+            .contact {
+                display: flex;
+                align-items: center;
+                /* icon và text cùng hàng */
+                gap: 12px;
+                margin-bottom: 8px;
 
-                p,
-                a {
-                    margin: 10px 0;
-                    color: #333;
-                    text-decoration: none;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-
-                .site-links {
+                .phone_img {
                     display: flex;
-                    flex-wrap: wrap;
-                    gap: 8px;
-
-                    span {
-                        background: #ddd;
-                        padding: 4px 10px;
-                        border-radius: 4px;
-                        font-size: 13px;
-                    }
+                    align-items: center;
+                    justify-content: center;
                 }
 
-                .social {
-                    margin-top: 10px;
+                .time-number-contact {
+                    text-align: left;
 
-                    span {
-                        display: inline-block;
-                        margin-right: 12px;
+                    .phone {
+                        font-size: 20px;
+                        font-weight: 700;
                     }
                 }
             }
+
+            .email {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+            }
         }
 
-        .footer-bottom {
-            font-size: 12px;
-            color: #666;
+        .socials {
+            display: flex;
+            gap: 12px;
+
+            .icon {
+                display: flex;
+                width: 36px;
+                height: 36px;
+                border-radius: 6px;
+                background: white;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
         }
     }
-
 }

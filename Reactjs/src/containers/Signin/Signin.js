@@ -1,124 +1,71 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import { push } from "connected-react-router";
-import { Link } from 'react-router-dom';
-import { handleSigninAPI } from '../../services/userService';
-import { userSigninSuccess } from '../../store/actions/userActions'
+import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
-import './Signin.scss';
-
-import HomeHeader from '../Home/HomeHeader';
 import Support from '../Support/Support';
 
-import Signin_img from '../../assets/Signin/Signin_img.png'
+import { ReactComponent as BackIcon } from "../team_logo/back.svg";
+import { ReactComponent as Facebook } from "../team_logo/facebook.svg";
+import { ReactComponent as Google } from "../team_logo/google.svg";
+import { ReactComponent as Mail } from "../team_logo/mail.svg";
+import Logo from "../team_logo/Logo.png";
 
-import { FormattedMessage, injectIntl } from 'react-intl';
+import "./Signin.scss";
+
 
 class Signin extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            phonenumber: '',
-            password: '',
-            errMessage: '',
-            showPassword: false
-        };
-    }
-
-    handleSignin = async () => {
-        this.setState({
-            errMessage: ''
-        })
-
-        try {
-            let data = await handleSigninAPI(this.state.phonenumber, this.state.password);
-            if (data && data.errCode !== 0) {
-                this.setState({
-                    errMessage: data.errMessage
-                })
-            }
-            else if (data && data.errCode === 0) {
-                this.props.userSigninSuccess(data.user)
-                console.log('sign in succeed')
-            }
-        } catch (e) {
-            if (e.response) {
-                if (e.response.data) {
-                    this.setState({
-                        errMessage: e.response.data.errMessage
-                    })
-                }
-            }
-            console.log('chonjohn', e.response)
-        }
-    }
-
-    handleOnChangeInputPhoneNumber = (event) => {
-        this.setState({
-            phonenumber: event.target.value
-        })
-    }
-
-    handleOnChangeInputPassword = (event) => {
-        this.setState({
-            password: event.target.value
-        })
-    }
-
     render() {
-        const { intl } = this.props;
-        const phoneInput = intl.formatMessage({ id: 'Signin.phone_input' });
-        const passwordInput = intl.formatMessage({ id: 'Signin.password_input' });
-
         return (
             <div className="Signin-container">
-                <HomeHeader />
-                <div className="order-lookup-wrapper">
-                    <div className="order-banner">
-                        <img src={Signin_img} alt="banner" />
+                {/* HEADER */}
+                <div className="signin-header">
+                    <div className="header-left">
+                        <BackIcon className="back-icon" />
+                        <span className="back-text">Trở về</span>
                     </div>
-                    <div className="order-lookup-box">
-                        <h2><FormattedMessage id="Signin.order_info" /></h2>
+                    <div className="header-right">
+                        <span className="header-title" onClick={() => this.props.navigate('/signup')}>Tạo tài khoản mới</span>
+                    </div>
+                </div>
 
-                        {/* Dùng form để hỗ trợ Enter */}
-                        <form
-                            onSubmit={(e) => {
-                                e.preventDefault(); // tránh reload trang
-                                this.handleSignin();
-                            }}
-                        >
-                            <div className="userInput">
-                                <div className="inputGroup">
-                                    <i className="fas fa-mobile-alt icon" />
-                                    <input
-                                        type="text"
-                                        placeholder={phoneInput}
-                                        value={this.state.phonenumber}
-                                        onChange={this.handleOnChangeInputPhoneNumber}
-                                    />
-                                </div>
+                {/* CONTENT */}
+                <div className="signin-content">
+                    <div className="content-logo">
+                        <img src={Logo} alt="Logo" />
+                    </div>
+                    <h1 className="content-title">ĐĂNG NHẬP</h1>
 
-                                <div className="inputGroup passwordGroup">
-                                    <input
-                                        type={this.state.showPassword ? 'text' : 'password'}
-                                        placeholder={passwordInput}
-                                        value={this.state.password}
-                                        onChange={this.handleOnChangeInputPassword}
-                                    />
-                                    <i
-                                        className={`fa-regular ${this.state.showPassword ? 'fa-eye' : 'fa-eye-slash'} icon toggle-password`}
-                                        onClick={() => this.setState({ showPassword: !this.state.showPassword })}
-                                        style={{ cursor: 'pointer' }}
-                                    />
-                                </div>
+                    <div className="form-section">
+                        <div className="form-box-signin-direct">
+                            <h2 className="form-heading">Đăng nhập</h2>
 
-                                <div className="inputGroup passwordGroup" style={{ color: "red" }}>
-                                    {this.state.errMessage}
-                                </div>
+                            <div className="form-group">
+                                <label>Email hoặc tên đăng nhập</label>
+                                <input type="text" />
                             </div>
 
-                            <button type="submit" className="btn-continue"><FormattedMessage id="Signin.continue" /></button>
-                        </form>
+                            <div className="form-group">
+                                <label>Mật khẩu</label>
+                                <input type="password" />
+                            </div>
+
+                            <button className="btn-submit">Đăng nhập</button>
+                        </div>
+
+                        <div className="divider">
+                            <span>OR</span>
+                        </div>
+
+                        <div className="form-box-signin-indirect">
+                            <button className="btn-outline google"><Google className="google-icon" />Tiếp tục với Google</button>
+                            <button className="btn-outline facebook"><Facebook className="facebook-icon" />Tiếp tục với Facebook</button>
+                            <button className="btn-outline email"><Mail className="mail-icon" />Đăng ký</button>
+                        </div>
+                    </div>
+                    <div className="extra-links">
+                        <a href="#">Bạn quên mật khẩu?</a>
                     </div>
                 </div>
                 <Support />
@@ -127,19 +74,16 @@ class Signin extends Component {
     }
 }
 
-
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
-        language: state.app.language
+        language: state.app.language,
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
         navigate: (path) => dispatch(push(path)),
-        // userSigninFail: () => dispatch(actions.userSigninFail()),
-        userSigninSuccess: (userInfo) => dispatch(userSigninSuccess(userInfo))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(Signin));
+export default connect(mapStateToProps, mapDispatchToProps)(Signin);

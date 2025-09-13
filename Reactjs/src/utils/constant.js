@@ -3,6 +3,7 @@ export const path = {
     HOMEPAGE: '/homepage',
     CART: '/cart',
     SIGNIN: '/signin',
+    SIGNUP: '/signup',
     PERSONAL: '/personal',
     SIGN_OUT: '/signout',
     SYSTEM: '/system'
