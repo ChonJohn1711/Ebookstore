@@ -11,6 +11,7 @@ import Signin from './Signin/Signin';
 import Signup from './Signup/Signup';
 import Personal from './Personal/Personal';
 import Cart from './Cart/Cart';
+import Search from './Searching/Searching';
 import HomePage from './Home/HomePage';
 import System from '../routes/System';
 import CustomScrollbars from '../components/CustomScrollbars';
@@ -52,6 +53,7 @@ class App extends Component {
                                     <Route path={path.SIGNUP} component={userIsNotAuthenticated(Signup)} />
                                     <Route path={path.PERSONAL} component={userIsAuthenticated(Personal)} />
                                     <Route path={path.CART} component={Cart} />
+                                    <Route path={path.SEARCH} component={Search} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                 </Switch>
                             </CustomScrollbars>

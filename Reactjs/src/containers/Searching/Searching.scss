@@ -1,0 +1,260 @@
+.searching-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: #E8ECEF;
+
+    .background-box {
+        width: 24%;
+        height: 1239.89px;
+        position: absolute;
+        background: #F3F5F7;
+        top: 139.11px;
+        left: 0;
+    }
+
+    .search-container {
+        width: 24%;
+        position: absolute;
+        top: 188.50px;
+        left: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 15px;
+
+        .filter-header {
+            position: relative;
+            width: 42%;
+            height: 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Aligns the items vertically */
+
+            .filter-title {
+                font-family: 'SF Compact Display';
+                font-size: 20px;
+                font-weight: 500;
+                color: #141718;
+                line-height: 28px;
+            }
+        }
+
+        .category-title {
+            font-family: 'SF Pro Display';
+            font-size: 16px;
+            font-weight: 600;
+            color: #141718;
+            line-height: 26px;
+        }
+
+        .category-list {
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px; // Giảm khoảng cách để cân đối
+            width: 100%;
+
+            .category-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+
+                .category-circle {
+                    width: 16px;
+                    height: 16px;
+                    border: 2px solid #333; // thêm viền
+                    border-radius: 50%; // hình tròn thay vì ô vuông
+                    background: #fff; // default nền trắng
+                    flex-shrink: 0;
+                }
+
+                .category-name {
+                    font-family: 'SF Compact Display';
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #333333;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        .see-more {
+            padding-left: 30px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .see-more-text {
+                color: #6C7275;
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 28px;
+                word-wrap: break-word;
+            }
+        }
+
+        .divider {
+            width: 176px;
+            height: 0;
+            border: 0.50px solid #CCCCCC;
+            outline-offset: -0.25px;
+        }
+    }
+
+    .location-container {
+        position: absolute;
+        top: 586.04px;
+        left: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 15px;
+
+        .location-header {
+            font-family: 'SF Compact Display';
+            font-size: 20px;
+            font-weight: 500;
+            color: #141718;
+            line-height: 28px;
+            word-wrap: break-word;
+        }
+
+        .location-list {
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+
+            .location-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+
+                .location-check {
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #333;
+                    border-radius: 4px; // ô vuông bo nhẹ
+                    background: #fff;
+                    position: relative;
+                    flex-shrink: 0;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 2px;
+                        left: 5px;
+                        width: 4px;
+                        height: 8px;
+                        border: solid #141718;
+                        border-width: 0 2px 2px 0;
+                        transform: rotate(45deg);
+                        opacity: 0; // ẩn tick mặc định
+                    }
+                }
+
+                .location-item.checked .location-check::after {
+                    opacity: 1; // hiện tick khi chọn
+                }
+
+                .location-name {
+                    font-family: 'SF Compact Display';
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #333333;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    .price-container {
+        width: 168.76px;
+        height: 115.92px;
+        position: absolute;
+        left: 5%;
+        top: 458.31px;
+
+        .price-header {
+            font-family: 'SF Compact Display';
+            font-size: 20px;
+            font-weight: 500;
+            color: #141718;
+            line-height: 28px;
+        }
+
+        .price-range {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            .price-from,
+            .price-to {
+                font-family: 'SF Pro Display';
+                font-size: 12px;
+                font-weight: 400;
+                color: white;
+                text-align: center;
+            }
+        }
+
+        .apply-button {
+            width: 168px;
+            height: 24px;
+            position: absolute;
+            left: 1px;
+            top: 75px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            outline: 1px solid #141718;
+            gap: 8px;
+
+            .apply-text {
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 500;
+                color: #141718;
+                line-height: 28px;
+            }
+        }
+    }
+
+    .related-products {
+        position: absolute;
+        left: 382.82px;
+        top: 169.23px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        .related-header {
+            font-family: 'SF Compact Display';
+            font-size: 20px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 28px;
+        }
+
+        .related-description {
+            font-family: 'Inter';
+            font-size: 14px;
+            font-weight: 400;
+            color: #9CA3AF;
+            word-wrap: break-word;
+        }
+    }
+}

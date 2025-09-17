@@ -1,0 +1,68 @@
+.banner-slider-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .banner-slide {
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .custom-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex !important;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            button.dot {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                border: 2px solid #FACC15;
+                background: white;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            &.slick-active button.dot {
+                background: black;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .banner-slide img {
+            height: 350px;
+        }
+
+        .custom-dots {
+            gap: 8px;
+            bottom: 16px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .banner-slide img {
+            height: 250px;
+        }
+
+        .custom-dots {
+            gap: 6px;
+            bottom: 10px;
+        }
+    }
+}

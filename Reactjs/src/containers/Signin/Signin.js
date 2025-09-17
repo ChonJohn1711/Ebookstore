@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
+import { handleSigninAPI } from '../../services/userService';
+import { userSigninSuccess } from '../../store/actions/userActions'
 
 import Support from '../Support/Support';
 
@@ -16,6 +18,46 @@ import "./Signin.scss";
 
 
 class Signin extends Component {
+    handleSignin = async () => {
+        this.setState({
+            errMessage: ''
+        })
+
+        try {
+            let data = await handleSigninAPI(this.state.phonenumber, this.state.password);
+            if (data && data.errCode !== 0) {
+                this.setState({
+                    errMessage: data.errMessage
+                })
+            }
+            else if (data && data.errCode === 0) {
+                this.props.userSigninSuccess(data.user)
+                console.log('sign in succeed')
+            }
+        } catch (e) {
+            if (e.response) {
+                if (e.response.data) {
+                    this.setState({
+                        errMessage: e.response.data.errMessage
+                    })
+                }
+            }
+            console.log('chonjohn', e.response)
+        }
+    }
+
+    handleOnChangeInputPhoneNumber = (event) => {
+        this.setState({
+            phonenumber: event.target.value
+        })
+    }
+
+    handleOnChangeInputPassword = (event) => {
+        this.setState({
+            password: event.target.value
+        })
+    }
+
     render() {
         return (
             <div className="Signin-container">
@@ -50,8 +92,9 @@ class Signin extends Component {
                                 <label>Mật khẩu</label>
                                 <input type="password" />
                             </div>
-
-                            <button className="btn-submit">Đăng nhập</button>
+                            <form onSubmit={(e) => { e.preventDefault(); this.handleSignin(); }}>
+                                <button className="btn-submit">Đăng nhập</button>
+                            </form>
                         </div>
 
                         <div className="divider">
@@ -83,6 +126,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         navigate: (path) => dispatch(push(path)),
+        userSigninSuccess: (userInfo) => dispatch(userSigninSuccess(userInfo))
     };
 };
 
